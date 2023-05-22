@@ -1,0 +1,31 @@
+;FFMETADATA1
+[CHAPTER]
+TIMEBASE=1/1000
+START=4088
+END=5502
+title=Misc .end() - end the command chain
+[CHAPTER]
+TIMEBASE=1/1000
+START=6287
+END=6928
+title=Misc cy.exec() - execute a system command
+[CHAPTER]
+TIMEBASE=1/1000
+START=7020
+END=7573
+title=Misc cy.focused() - get the DOM element that has focus
+[CHAPTER]
+TIMEBASE=1/1000
+START=7863
+END=8128
+title=Misc cy.wrap() - wrap an object
+[CHAPTER]
+TIMEBASE=1/1000
+START=6035
+END=8397
+title=Misc Cypress.Screenshot cy.screenshot() - take a screenshot
+[CHAPTER]
+TIMEBASE=1/1000
+START=10191
+END=10766
+title=Misc Cypress.Screenshot Cypress.Screenshot.defaults() - change default config of screenshots
