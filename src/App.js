@@ -11,6 +11,10 @@ import { useAxios } from "./hooks/useAxios";
 import Greeting from "./components/Greeting";
 import CounterSimple from "./components/CounterSimple";
 import StudentList from "./components/StudentList";
+import CounterContextApi from "./components/CounterContextApi";
+import { useContext } from "react";
+import { CounterContext } from "./context/CounterProvider";
+import { ThemeContext } from "./context/ThemeProvider";
 
 function App() {
   const [name, setName] = useState("");
@@ -32,6 +36,8 @@ function App() {
     "https://620d69fb20ac3a4eedc05e3a.mockapi.io/api/products",
     "post"
   );
+  const counterContext = useContext(CounterContext);
+  const themeContext = useContext(ThemeContext);
 
   const arttirici = () => {
     setCounter(counter + 1);
@@ -69,8 +75,16 @@ function App() {
   //   });
 
   return (
-    <div className="App">
+    <div className={"App " + themeContext.theme}>
       <Greeting name="Ali" />
+      <h3>Context API Sayaç: {counterContext.counter}</h3>
+      <button
+        onClick={() => {
+          counterContext.setShow(!counterContext.show);
+        }}
+      >
+        {counterContext.show ? "Hide" : "Show"} Controls
+      </button>
       {productsLoading && (
         <div
           style={{
@@ -135,6 +149,7 @@ function App() {
           <Link to="/counter/50">Counter 50</Link>
           <Link to="/user">Create User</Link>
           <Link to="/counter-simple">Counter SIMPLE</Link>
+          <Link to="/counter-context">Counter Context API</Link>
           <Link to="/students">Students</Link>
         </nav>
 
@@ -144,6 +159,9 @@ function App() {
           </Route>
           <Route path="/counter-simple">
             <CounterSimple />
+          </Route>
+          <Route path="/counter-context">
+            <CounterContextApi />
           </Route>
           <Route path="/counter/:initialValue">
             <CounterPage counterProps={counterProps} />

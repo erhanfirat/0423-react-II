@@ -23,3 +23,12 @@ code {
 .container-card {
   @apply rounded-lg bg-rose-700 text-white m-3 p-3 text-2xl flex flex-col items-start bg-[url('../src/assets/portrait.jpg')]  md:w-[20rem] lg:w-[30rem] sm:w-[100%];
 }
+
+button {
+  @apply rounded bg-blue-600 text-white p-3 m-2;
+}
+
+.dark * {
+  background-color: #333;
+  color: white;
+}
