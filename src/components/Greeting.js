@@ -10,7 +10,7 @@ const Greeting = ({ name }) => {
 
   return (
     <>
-      {name && <h1 className="my-greeting">Merhaba {name}</h1>}
+      {name && <h1 className="my-greeting">Sayfama hoşgeldin {name}!</h1>}
       <h3>Artış Mikarı: {counterContext.artisMiktari}</h3>
       <button
         onClick={() => {
